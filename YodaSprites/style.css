@@ -1,0 +1,39 @@
+:root{
+    --scalingfactor: 6
+}
+body{
+background-color: #ff0099;
+margin: 0;
+}
+
+.Character{
+    position: fixed;
+    left:100px;
+    background-color:rgba(247, 247, 12, 0.6);
+    width: calc(33px*var(--scalingfactor));
+    height: calc(41px*var(--scalingfactor));
+    overflow:hidden;
+
+}
+.pixelart{
+    image-rendering: pixelated;
+}
+.imageClass{
+    animation: moveSpriteSheet 0.5s steps(5) infinite;
+    position: absolute;
+    width: calc(162px*var(--scalingfactor));
+    height: calc(48px*var(--scalingfactor));
+
+    
+    
+
+}
+
+@keyframes moveSpriteSheet{
+    from{
+        transform: translate3d(0px,0,0);
+    }
+    to{
+        transform: translate3d(-99%,0,0);
+    }
+}
