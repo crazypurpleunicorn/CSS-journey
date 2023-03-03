@@ -1,0 +1,56 @@
+
+/* The `*` selector does not include the pseudo elements, so if want to have common attributes, must specify it...*/
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*supress body's default margin and add background color*/
+body{
+    margin: 0;
+    background-color: #0a0a0a;
+}
+
+nav{
+    height: 20vh;
+    width: 70vw;
+    margin: auto;
+
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+ul li{
+    display: inline;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+ul li a{
+    position: relative;
+    text-decoration: none;
+    color: #a0a0a0;
+    font-size: 1rem;
+    padding: 0 5px;
+    text-align: center;
+}
+
+a::before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 105%;
+    height: 1px;
+    background-color: palevioletred;
+    width: 0%;
+    border-radius: 1px;
+    transition: width 0.3s ease;
+}
+
+a:hover::before{
+    width: 100%;
+
+}
