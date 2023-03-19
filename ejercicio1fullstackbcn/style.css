@@ -1,7 +1,5 @@
 body{
     margin: 0;
-    display: flex;
-    justify-content: center;
 }
 
 .cardContainer{
@@ -12,6 +10,7 @@ body{
     max-width: 750px;
     border: black solid px;
     flex-wrap: wrap;
+    margin: 0 auto;
 }
 .card{
     border: blue solid 1px;
@@ -36,3 +35,63 @@ body{
 }
 }
 
+nav{
+    background-color: #00524c;
+    position: sticky;
+}
+ nav ul{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;/*since items have grow:1...there is no space to be distributed, this statment does not do anything*/
+
+}
+
+nav a{
+    text-decoration: none;
+    color: #f7efef;
+    font-size: 0.6rem;
+    position: relative;
+    
+
+}
+nav ul li{
+    flex-grow: 1;
+    flex-basis: 0;/*since all flex items start from 0 and flex grow is set to 1 by default all items will take the same space(equals columns)*/
+    text-align: center;
+    padding-bottom: 5px;
+   
+}
+nav a::after{
+    content: '\0025bf';
+   
+   
+}
+
+nav ul li:last-child{
+    outline: solid withe 0.5px;
+}
+
+.searchIcon{
+    outline: 0.25px solid white;
+    outline-offset: 1px;
+}
+
+nav a::before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 115%;
+    height: 1px;
+    background-color: white;
+    width: 0%;
+    border-radius: 1px;
+    transition: width 0.3s ease;
+}
+
+a:hover::before{
+    width: 95%;
+}
+a:hover{
+    color:white;
+}
